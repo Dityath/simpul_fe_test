@@ -1,19 +1,27 @@
 import { Menu, Transition } from "@headlessui/react";
+import styles from "@/styles/components/chatBox.module.css";
 
 type ChatBoxType = {
   chat: string;
   time: string;
   user: "you" | string;
   color: string;
+  textColor: string;
 };
 
-const ChatBox = ({ chat, time, user, color }: ChatBoxType) => {
+const ChatBox = ({ chat, time, user, color, textColor }: ChatBoxType) => {
   return (
-    <div>
-      <p>{user}</p>
-      <div>
+    <div
+      className={`${user === "You" ? styles.userYou : styles.userOther} ${
+        styles.chatBoxMain
+      }`}>
+      <p style={{ color: textColor }}>{user}</p>
+      <div
+        className={`${styles.chatBoxSecond} ${
+          user !== "You" && styles.chatBoxSecondMirror
+        }`}>
         <Menu>
-          <Menu.Button>
+          <Menu.Button className={styles.chatBoxButton}>
             <svg
               width='16'
               height='16'
@@ -45,7 +53,9 @@ const ChatBox = ({ chat, time, user, color }: ChatBoxType) => {
             </Menu.Items>
           </Transition>
         </Menu>
-        <div style={{ backgroundColor: color }}>
+        <div
+          className={styles.chatBoxMainBox}
+          style={{ backgroundColor: color }}>
           <p>{chat}</p>
           <p>{time}</p>
         </div>

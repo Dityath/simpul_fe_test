@@ -9,11 +9,15 @@ type BoxType = {
   style?: React.CSSProperties;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
+  noPadding?: boolean;
 };
 
-const Box = ({ children, className }: BoxType): JSX.Element => {
+const Box = ({ children, className, noPadding }: BoxType): JSX.Element => {
   return (
-    <div className={`${styles.box} ${lato.className} ${className}`}>
+    <div
+      className={`${noPadding ? styles.boxNoPadding : styles.box} ${
+        lato.className
+      } ${className}`}>
       {children}
     </div>
   );

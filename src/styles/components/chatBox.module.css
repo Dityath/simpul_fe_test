@@ -1,0 +1,50 @@
+.chatBoxMain {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.userYou {
+  text-align: end;
+}
+
+.userOther {
+  text-align: start;
+}
+
+.chatBoxMain p {
+  font-size: small;
+}
+
+.chatBoxSecond {
+  display: flex;
+  align-items: start;
+  flex-direction: row;
+  justify-content: right;
+  gap: 5px;
+}
+
+.chatBoxSecondMirror {
+  flex-direction: row-reverse;
+  justify-content: left;
+}
+
+.chatBoxButton {
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.chatBoxMainBox {
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatBoxMainBox p {
+  color: var(--primary-2);
+}

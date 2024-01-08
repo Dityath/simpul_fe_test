@@ -9,3 +9,12 @@
   padding: 24px 32px;
   font-family: "Lato", sans-serif;
 }
+
+.boxNoPadding {
+  background-color: white;
+  position: absolute;
+  right: 34px;
+  bottom: 110px;
+  border-radius: 5px;
+  font-family: "Lato", sans-serif;
+}

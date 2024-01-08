@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import BoxDivider from "../micro/boxDivider";
 import BoxInbox from "../micro/boxInbox";
 import ChatBox from "../micro/chatBox";
+import ChatBoxDivider from "../micro/chatBoxDivider";
+import ChatBoxNewMsg from "../micro/chatBoxNewMsg";
 
 type TabsInboxType = {
   isOpen?: boolean;
@@ -24,8 +26,9 @@ const TabsInbox = ({ isOpen, setIsOpen }: TabsInboxType) => {
 
   return (
     <Box
-      className={`${styles.box} ${
-        phase === "chat" ? styles.boxChatPhase : null
+      noPadding={phase === "chat"}
+      className={`${phase === "chat" ? styles.boxChatPhase : null} ${
+        styles.box
       }`}>
       {phase === "load" ? (
         <>
@@ -282,10 +285,48 @@ const TabsInbox = ({ isOpen, setIsOpen }: TabsInboxType) => {
           </div>
           <div className={styles.chatMain}>
             <ChatBox
+              chat='Morning. I’ll try to do them. Thanks'
+              time='19:32'
+              user='Obaidullah Amarkhil'
+              color='#D2F2EA'
+              textColor='#43B78D'
+            />
+            <ChatBoxNewMsg />
+            <ChatBox
+              chat='Sure thing, Claren'
+              time='19:32'
+              user='Mary Hilda'
+              color='#FCEED3'
+              textColor='#E5A443'
+            />
+            <ChatBox
+              chat='Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.'
+              time='19:32'
+              user='You'
+              color='#EEDCFF'
+              textColor='#9B51E0'
+            />
+            <ChatBox
+              chat='Hello Obaidullah, I will be your case advisor for case #029290. I have assigned some homework for you to fill. Please keep up with the due dates. Should you have any questions, you can message me anytime. Thanks.'
+              time='19:32'
+              user='Mary Hilda'
+              color='#FCEED3'
+              textColor='#E5A443'
+            />
+            <ChatBoxDivider date='Today June 09, 2021' />
+            <ChatBox
               chat='No worries. It will be completed ASAP. I’ve asked him yesterday.'
               time='19:32'
               user='You'
               color='#EEDCFF'
+              textColor='#9B51E0'
+            />
+            <ChatBox
+              chat='Just Fill me in for his updates yea?'
+              time='19:32'
+              user='Mary Hilda'
+              color='#FCEED3'
+              textColor='#E5A443'
             />
           </div>
           <div className={styles.chatBottom}>

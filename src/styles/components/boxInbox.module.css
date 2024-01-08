@@ -1,0 +1,49 @@
+.mainAllInbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.mainInbox {
+  display: flex;
+  gap: 5px;
+}
+
+.leftInbox {
+  width: 55px;
+  display: flex;
+}
+
+.rightInboxTitles {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rightInboxTitles h1 {
+  color: var(--primary-1);
+  font-size: small;
+}
+
+.rightInbox b {
+  font-size: smaller;
+  color: var(--primary-2);
+}
+
+.rightInbox p {
+  font-size: smaller;
+  color: var(--primary-2);
+}
+
+.rightInboxTitles p {
+  font-size: smaller;
+  color: var(--primary-2);
+}
+
+.dotNotif {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 100%;
+}

@@ -1,0 +1,39 @@
+.overallTabs {
+  position: absolute;
+  right: 34px;
+  bottom: 27px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: end;
+  gap: 26px;
+}
+
+.mainTabs {
+  width: 68px;
+  height: 68px;
+  background-color: var(--primary-1);
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.secondaryTabs {
+  width: 60px;
+  height: 60px;
+  background-color: var(--border-gray);
+  border-radius: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+}

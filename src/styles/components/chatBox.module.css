@@ -17,6 +17,7 @@
 }
 
 .chatBoxSecond {
+  position: relative;
   display: flex;
   align-items: start;
   flex-direction: row;
@@ -34,6 +35,37 @@
   border: none;
   width: fit-content;
   cursor: pointer;
+}
+
+.chatBoxMenu {
+  position: absolute;
+  width: 100px;
+  z-index: 40;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  transform-origin: top left;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+}
+
+.chatBoxMenuDivider {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #bdbdbd;
+  margin-bottom: 5px;
+}
+
+.chatBoxMenuDiv {
+  padding: 5px;
+}
+
+.chatBoxMenuDiv p {
+  font-size: medium;
+  color: #eb5757;
+}
+
+.chatBoxMenuDiv:first-child p {
+  color: var(--primary-1);
 }
 
 .chatBoxMainBox {

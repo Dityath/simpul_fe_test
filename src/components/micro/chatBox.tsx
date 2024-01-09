@@ -1,5 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import styles from "@/styles/components/chatBox.module.css";
+import { Fragment } from "react";
 
 type ChatBoxType = {
   chat: string;
@@ -37,19 +38,25 @@ const ChatBox = ({ chat, time, user, color, textColor }: ChatBoxType) => {
             </svg>
           </Menu.Button>
           <Transition
-            enter='transition duration-100 ease-out'
-            enterFrom='transform scale-95 opacity-0'
-            enterTo='transform scale-100 opacity-100'
-            leave='transition duration-75 ease-out'
-            leaveFrom='transform scale-100 opacity-100'
-            leaveTo='transform scale-95 opacity-0'>
-            <Menu.Items>
-              <Menu.Item>
-                <>Edit</>
-              </Menu.Item>
-              <Menu.Item>
-                <>Delete</>
-              </Menu.Item>
+            as={Fragment}
+            enter='transition ease-out duration-100'
+            enterFrom='transform opacity-0 scale-95'
+            enterTo='transform opacity-100 scale-100'
+            leave='transition ease-in duration-75'
+            leaveFrom='transform opacity-100 scale-100'
+            leaveTo='transform opacity-0 scale-95'>
+            <Menu.Items className={styles.chatBoxMenu}>
+              <div
+                className={`${styles.chatBoxMenuDivider} ${styles.chatBoxMenuDiv}`}>
+                <Menu.Item>
+                  <p>Edit</p>
+                </Menu.Item>
+              </div>
+              <div className={styles.chatBoxMenuDiv}>
+                <Menu.Item>
+                  <p>Delete</p>
+                </Menu.Item>
+              </div>
             </Menu.Items>
           </Transition>
         </Menu>
